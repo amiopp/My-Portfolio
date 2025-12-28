@@ -12,6 +12,7 @@ body {
   background: var(--background);
   font-family: var(--font-inter), sans-serif;
   overflow-x: hidden;
+  cursor: none;
 }
 
 /* Noise Texture */

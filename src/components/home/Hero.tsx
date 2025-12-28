@@ -2,16 +2,21 @@
 
 import { motion } from "framer-motion";
 import MagneticButton from "@/components/ui/MagneticButton";
+import Hero3DBackground from "@/components/ui/Hero3DBackground";
+import TextReveal, { WordReveal } from "@/components/ui/TextReveal";
 import Link from "next/link";
 
 export default function Hero() {
     return (
         <section id="home" className="relative min-h-screen w-full flex items-center justify-center overflow-hidden">
-            {/* Animated Background */}
+            {/* 3D Background */}
+            <Hero3DBackground />
+
+            {/* Gradient Overlays */}
             <div className="absolute inset-0 z-0">
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/20 via-purple-900/20 to-pink-900/20"></div>
-                <div className="absolute top-1/4 -left-48 w-96 h-96 bg-accent-blue/10 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-accent-purple/10 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-900/10 via-purple-900/10 to-pink-900/10"></div>
+                <div className="absolute top-1/4 -left-48 w-96 h-96 bg-accent-blue/5 rounded-full blur-3xl animate-pulse"></div>
+                <div className="absolute bottom-1/4 -right-48 w-96 h-96 bg-accent-purple/5 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '2s' }}></div>
             </div>
 
             {/* Content */}
@@ -31,10 +36,10 @@ export default function Hero() {
                     transition={{ duration: 0.8, ease: "easeOut" }}
                     className="text-6xl md:text-8xl lg:text-9xl font-display font-bold tracking-tighter mb-6"
                 >
-                    Hi, I'm
+                    <TextReveal>Hi, I'm</TextReveal>
                     <br />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-blue via-accent-purple to-accent-blue bg-[length:200%_auto] animate-gradient">
-                        Mohamed Amine
+                        <TextReveal delay={0.3}>Mohamed Amine</TextReveal>
                     </span>
                 </motion.h1>
 

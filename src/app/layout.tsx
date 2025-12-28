@@ -2,7 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import SmoothScroll from "@/components/ui/SmoothScroll";
-import CustomCursor from "@/components/ui/CustomCursor";
+import FluidCursor from "@/components/ui/FluidCursor";
+import PageLoader from "@/components/ui/PageLoader";
 import Dock from "@/components/layout/Dock";
 import { cn } from "@/lib/utils";
 
@@ -21,9 +22,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={cn(inter.variable, "bg-background text-foreground antialiased")}>
+        <PageLoader />
         <SmoothScroll>
           <div className="bg-noise" />
-          <CustomCursor />
+          <FluidCursor />
           {children}
           <Dock />
         </SmoothScroll>
